@@ -1,7 +1,6 @@
 package com.example.evan.trailer_app;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,16 +46,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
 
         holder.movie_name.setText(_movieList.get(position).name);
         holder.movie_delete.setTag(position);
-
-        holder.movie_name.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, MovieDetail.class);
-                context.startActivity(intent);
-            }
-        });
-
         holder.movie_delete.setOnClickListener(new View.OnClickListener(){
 
             @Override
