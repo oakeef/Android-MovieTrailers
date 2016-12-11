@@ -24,7 +24,7 @@
     <Button
         android:id="@+id/movie_delete"
         android:text="Delete"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:scaleType="fitCenter"
         android:layout_margin="8dp"

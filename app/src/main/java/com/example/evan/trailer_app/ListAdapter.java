@@ -1,6 +1,7 @@
 package com.example.evan.trailer_app;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,8 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,9 +44,19 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
     @Override
     public void onBindViewHolder(ListViewHolder holder, int position) {
 
-        Picasso.with(context).load("http://www.impawards.com/2008/posters/iron_man_ver5.jpg").into(holder.movie_thumb);
+
         holder.movie_name.setText(_movieList.get(position).name);
         holder.movie_delete.setTag(position);
+
+        holder.movie_name.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, MovieDetail.class);
+                context.startActivity(intent);
+            }
+        });
+
         holder.movie_delete.setOnClickListener(new View.OnClickListener(){
 
             @Override
