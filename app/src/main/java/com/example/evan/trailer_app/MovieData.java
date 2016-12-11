@@ -1,8 +1,5 @@
 package com.example.evan.trailer_app;
 
-import android.content.ContentValues;
-import android.database.sqlite.SQLiteDatabase;
-
 import java.io.Serializable;
 
 /**
@@ -12,6 +9,7 @@ import java.io.Serializable;
 public class MovieData implements Serializable {
 
     String name, description, thumbnail, video;
+    int rating;
 
 
 }

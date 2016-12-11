@@ -13,7 +13,7 @@ import android.widget.EditText;
 
 public class AddMovie extends AppCompatActivity{
 
-    EditText et_name, et_description, et_thumb, et_video;
+    EditText et_name, et_description, et_thumb, et_video, et_rating;
     Button btn_save;
     MovieDBHelper dbHelper;
 
@@ -28,6 +28,7 @@ public class AddMovie extends AppCompatActivity{
         et_description = (EditText) findViewById(R.id.et_description);
         et_thumb = (EditText) findViewById(R.id.et_posterurl);
         et_video = (EditText) findViewById(R.id.et_youtubeurl);
+        et_rating = (EditText) findViewById(R.id.et_rating);
         btn_save = (Button) findViewById(R.id.btn_next);
 
         btn_save.setOnClickListener(new View.OnClickListener(){
@@ -54,6 +55,10 @@ public class AddMovie extends AppCompatActivity{
                 }
                 if (!et_video.getText().toString().isEmpty()) {
                     movie.video = et_video.getText().toString();
+                } else {
+                    movie.video = "";
+                } if (!et_rating.getText().toString().isEmpty()) {
+                    movie.rating = Integer.parseInt(et_rating.getText().toString());
                 } else {
                     movie.video = "";
                 }

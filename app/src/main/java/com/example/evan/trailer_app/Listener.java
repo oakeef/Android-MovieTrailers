@@ -6,5 +6,5 @@ package com.example.evan.trailer_app;
 
 public interface Listener {
 
-    void nameToChnge(String name);
+    void movieToDelete(String name);
 }

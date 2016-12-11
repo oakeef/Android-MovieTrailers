@@ -10,7 +10,7 @@
     tools:context="com.example.evan.trailer_app.ShowMovies">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_contactlist"
+        android:id="@+id/rv_movielist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

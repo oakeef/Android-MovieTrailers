@@ -37,11 +37,17 @@
         android:hint="Enter Youtube URL"
         android:layout_width="match_parent"
         android:layout_height="45dp" />
-
+    <EditText
+        android:layout_below="@+id/et_youtubeurl"
+        android:layout_margin="10dp"
+        android:id="@+id/et_rating"
+        android:hint="Enter Rating"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
     <Button
         android:id="@+id/btn_next"
         android:layout_marginTop="10dp"
-        android:layout_below="@+id/et_youtubeurl"
+        android:layout_below="@+id/et_rating"
         android:layout_centerHorizontal="true"
         android:text="Enter"
         android:layout_width="150dp"

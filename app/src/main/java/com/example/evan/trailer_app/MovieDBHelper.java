@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.provider.BaseColumns;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -55,13 +54,12 @@ public class MovieDBHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_MOVIES = "CREATE TABLE" + MOVIES_TABLE + "(" +
-                BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                COLUMN_MOVIE_NAME + " TEXT," +
+        String CREATE_MOVIES = "CREATE TABLE " + MOVIES_TABLE + "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                COLUMN_MOVIE_NAME + " TEXT NOT NULL," +
                 COLUMN_MOVIE_DESC + " TEXT," +
-                COLUMN_MOVIE_THUMB + " TEXT," +
-                COLUMN_MOVIE_VIDEO + " TEXT," +
-                COLUMN_MOVIE_RATING + " INTEGER";
+                COLUMN_MOVIE_THUMB + " TEXT NOT NULL DEFAULT '?'," +
+                COLUMN_MOVIE_VIDEO + " TEXT NOT NULL DEFAULT '?'," +
+                COLUMN_MOVIE_RATING + " INTEGER NOT NULL DEFAULT 0)";
         db.execSQL(CREATE_MOVIES);
 
     }
@@ -90,6 +88,7 @@ public class MovieDBHelper extends SQLiteOpenHelper{
             values.put(COLUMN_MOVIE_DESC, movieData.description);
             values.put(COLUMN_MOVIE_THUMB, movieData.thumbnail);
             values.put(COLUMN_MOVIE_VIDEO, movieData.video);
+            values.put(COLUMN_MOVIE_RATING, movieData.rating);
 
             db.insertOrThrow(MOVIES_TABLE, null, values);
             db.setTransactionSuccessful();
@@ -153,5 +152,6 @@ public class MovieDBHelper extends SQLiteOpenHelper{
         }
 
     }//end deleteRow
+    
 }
 

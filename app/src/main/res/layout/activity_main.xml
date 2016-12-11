@@ -10,8 +10,19 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.evan.trailer_app.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <Button
+        android:id="@+id/btn_show"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:text="Show Movies"
+        android:layout_width="150dp"
+        android:layout_height="45dp" />
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/btn_show"
+        android:layout_centerHorizontal="true"
+        android:text="Add Movies"
+        android:layout_width="150dp"
+        android:layout_height="45dp" />
 </RelativeLayout>
